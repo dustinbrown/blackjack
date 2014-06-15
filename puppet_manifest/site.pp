@@ -18,3 +18,11 @@ rvm_system_ruby {
     default_use => true;
   #  'jruby':;
 }
+
+rvm_gem {
+  'redis':
+    name         => 'redis',
+    ruby_version => 'ruby-2.0.0-p481',
+    ensure       => latest,
+    require      => Rvm_system_ruby['ruby-2.0.0'];
+}
